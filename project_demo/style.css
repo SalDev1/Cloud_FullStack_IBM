@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", "Helvetica Neue", "Helvetica", "Segoe UI", Tahoma,
+    Geneva, Verdana, sans-serif;
+  --foreground: 180 184 203;
+}
+
+body {
+  background-color: rgb(39 34 61);
+  color: rgb(var(--foreground));
+  display: grid;
+  place-content: center;
+  height: 100vh;
+}
+
+section {
+  background-color: rgb(34 30 55);
+  width: 400px;
+  position: relative;
+  box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.5);
+}
+
+.pro {
+  background-color: #ffbb00;
+  color: rgb(34 30 55);
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+button {
+  background-color: transparent;
+  padding: 0.5rem 1.25rem;
+  border: 1px solid rgb(86 188 201);
+  border-radius: 0.25rem;
+  color: rgb(86 188 201);
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgba(86, 188, 201, 0.361);
+  }
+
+  &.primary {
+    background: rgb(86 188 201);
+    color: rgb(34 30 55);
+    &:hover {
+      filter: brightness(1.2);
+    }
+  }
+}
+
+.personal {
+  padding: 1rem;
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  align-items: center;
+
+  h1,
+  .stack {
+    font-size: 1.25rem;
+    font-weight: normal;
+  }
+
+  .country {
+    margin-top: -16px;
+    margin-bottom: 16px;
+  }
+
+  img {
+    width: 200px;
+    height: 200px;
+    border: none;
+    border-radius: 100vmax;
+    border: 1px solid rgb(86 188 201);
+  }
+
+  .social {
+    display: flex;
+    gap: 1rem;
+    padding: 0.25rem;
+
+    a {
+      text-decoration: none;
+      color: rgb(var(--foreground));
+      font-size: x-large;
+    }
+  }
+}
+
+.skills {
+  padding: 1rem;
+  background-color: rgb(30 26 52);
+  display: grid;
+  gap: 1rem;
+  h2 {
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: normal;
+  }
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    li {
+      list-style-type: none;
+      padding: 0.25rem;
+      border: 1px solid #fff1;
+    }
+  }
+}
