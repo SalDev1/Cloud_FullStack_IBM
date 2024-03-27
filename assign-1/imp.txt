@@ -1,0 +1,3 @@
+http://localhost:4200/countries
+
+json-server countryStates.json --id country --port 4200 

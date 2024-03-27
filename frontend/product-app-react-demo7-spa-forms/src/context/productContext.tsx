@@ -43,7 +43,7 @@ export const ProductProvider:FC<Props> = ({children,url}):ReactElement => {
 
     useEffect(() => {
         getProducts();
-    },[url])
+    },[url,products])
 
     // Object Literal Expressions 
     const context = {

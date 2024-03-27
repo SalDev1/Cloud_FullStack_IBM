@@ -1,9 +1,10 @@
-import { FC , ReactElement} from "react";
+import { FC , ReactElement, useState} from "react";
 import App from "../App";
 import { Route, Routes } from "react-router-dom";
 import ProductsList from "../components/ProductList";
 import { Home } from "../components/Home";
 import { ProductDetails } from "../components/ProductDetails";
+// import IProduct from "../model/product";
 
 export const AppRoutes:FC<any> = (): ReactElement => {
     return (
