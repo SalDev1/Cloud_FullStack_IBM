@@ -6,6 +6,8 @@ const Home = () => {
     const [fetchCountries,setFetchCountries] = useState<ICountry[]>([]);
     const [selectCountry , setSelectCountry] = useState('');
     const [Cstates, setCStates] = useState([]);
+    
+    const length = Cstates?.length
 
     const getCountries = async () => {
         const response = await httpClient.get('http://localhost:4200/countries');
@@ -28,9 +30,17 @@ const Home = () => {
 
             <select name = "states">
                 {
-                    Cstates?.map((c) => (
-                        <option className="s_name">{c}</option>
-                    ))
+                    length > 0 ? (
+                        <>
+                          {Cstates?.map((c) => (
+                            <option className="s_name">{c}</option>
+                          ))}
+                        </>
+                    ) : (
+                        <>
+                         <option className="s_name">None</option>
+                        </>
+                    )
                 }
             </select>
         </div>
