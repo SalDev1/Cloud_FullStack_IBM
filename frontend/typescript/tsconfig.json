@@ -3,5 +3,6 @@
         "target":"ES5",
         "module":"ES2022",
         "strict": true,
+        "experimentalDecorators": true
     }
 }
