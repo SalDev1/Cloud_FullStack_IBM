@@ -41,7 +41,8 @@
                     <img *ngIf="showImage" [src]="product.imageUrl" [title]="product.productName" style="width:75px;margin: 2px;"/>
                 <!-- } -->
             </td>
-            <td><a>{{product.productName}}</a></td>
+            <!-- For seeing the details of the specific product , we do attribute binding. -->
+            <td><a [routerLink]="['/products',product.productId]">{{product.productName}}</a></td>
             <td>{{product.productCode}}</td>
             <td>{{product.productAvailable}}</td>
             <td>{{product.price}}</td>

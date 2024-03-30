@@ -1,0 +1,27 @@
+@if (product) {
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-3">ProductName</div>
+            <div class="col-md-6">{{product?.productName}}</div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-3">Price</div>
+            <div class="col-md-6">{{product?.price}}</div>
+        </div>
+    
+        <div class="row">
+            <div class="col-md-3">productAvailable</div>
+            <div class="col-md-6">{{product?.productAvailable}}</div>
+        <div class="row">
+    
+                <div class="col-2">
+                    <button class="btn btn-info btn-block" (click)="onBack()">Back</button>
+                </div>
+                <div class="col-2">
+                    <button class="btn btn-info btn-block">{{product?.productName}}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}

@@ -22,7 +22,6 @@ const ProductSearch = () => {
         </form>
     )
 }
-c
 /*
   Two Solutions to this problem. 
    1) having global state above the both the components. 
