@@ -4,7 +4,10 @@
       "productName": "OnePlus1",
       "price": 55000.5,
       "starRating": "4.8",
-      "productId": 2
+      "productId": 2,
+      "pricee": "45678.5",
+      "productCode": "Oneplus",
+      "productAvailable": "30-Sep-2024"
     },
     {
       "productName": "Oppo21",

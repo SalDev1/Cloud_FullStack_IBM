@@ -1,0 +1,9 @@
+<form [formGroup]="form" (ngSubmit)="submit()">
+    <!-- It generates the controls for you. -->
+    <div>
+        <formly-form [fields]="fields" [form]="form" [model]="product"></formly-form>
+    </div>
+    <div>
+        <button [disabled]="form.invalid">Submit</button>
+    </div>
+</form>
