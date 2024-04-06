@@ -1,0 +1,13 @@
+<div class="container-fluid text-black">
+    <h1 class="mt-2">Report an Issue</h1>
+
+    <form [formGroup]="form" (ngSubmit)="submit(newIssue)">
+        <div>
+            <formly-form [form]="form" [fields]="fields" [options]="options" [model]="newIssue"></formly-form>
+        </div>
+        <div class="w-25 d-flex justify-content-between align-items-center"> 
+            <button class="p-2 bg-info text-white border border-none" [disabled]="form.invalid">Create</button>
+            <button class="p-2 text-info bg-white border border-info" (click)="onBack()">Cancel</button>
+        </div>
+    </form>
+</div>

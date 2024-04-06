@@ -3,16 +3,31 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { EditFormComponent } from './edit-form/edit-form.component';
+import { IssueTableComponent } from './issue-table/issue-table.component';
+import { IssueAddComponent } from './issue-add/issue-add.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormlyBootstrapModule } from '@ngx-formly/bootstrap';
+import { FormlyBootstrapInputModule } from '@ngx-formly/bootstrap/input';
+import { FormlyModule } from '@ngx-formly/core';
 
 @NgModule({
   declarations: [
     AppComponent,
-    EditFormComponent
+    IssueTableComponent,
+    IssueAddComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormlyBootstrapModule,
+    FormlyBootstrapInputModule,
+
+    FormlyModule.forRoot({  // Global Validations.
+      validationMessages:[
+        {name:'required',message:'Field is mandatory'}
+      ]
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

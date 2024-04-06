@@ -1,12 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { EditFormComponent } from './edit-form/edit-form.component';
+import { IssueAddComponent } from './issue-add/issue-add.component';
+import { IssueTableComponent } from './issue-table/issue-table.component';
 
 const routes: Routes = [
   {
-    path:"/edit",
-    component: EditFormComponent,
-    title:"Edit Form"
+    path:'',
+    component:IssueTableComponent,
+    title:"Welcome"
+  },
+  {
+    path:'add-issue',
+    component:IssueAddComponent,
+    title:"Add Issue"
   }
 ];
 

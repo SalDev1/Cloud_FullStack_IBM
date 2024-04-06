@@ -1,0 +1,34 @@
+<div>
+    <h1 class="p-2 mb-3">Issue Tracker</h1>
+
+    <button class="p-2 mb-2 bg-dark text-white font-weight-normal" (click)="onAddIssue()">
+        Add a New Issue
+    </button>
+
+    <table class="table">
+        <thead>
+            <th scope="col">Issue No</th>
+            <th scope="col">Type</th>
+            <th scope="col">Title</th>
+            <th scope="col">Description</th>
+            <th scope="col">Priority</th>
+            <th scope="col">Action</th>
+        </thead>
+        <tbody>
+           @for (issue of issues; track $index) {
+            <tr scope="row">
+                <td>{{$index}}</td>
+                <td>{{issue.type}}</td>
+                <td>{{issue.title}}</td>
+                <td>{{issue.description}}</td>
+                <td>{{issue.priority}}</td>
+                <td>
+                    <button style = "border: none; background-color: white;" (click)="onDeleteIssue(issue.title)">
+                        <i class="fa fa-trash" aria-hidden="true"></i>
+                    </button>
+                </td>
+            </tr>
+           }
+        </tbody>
+    </table>
+</div>
