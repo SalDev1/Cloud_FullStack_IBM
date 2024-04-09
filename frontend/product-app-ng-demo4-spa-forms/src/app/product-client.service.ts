@@ -41,12 +41,9 @@ export class ProductClientService {
     .pipe(tap(data=>console.log(data)),
     catchError((err:HttpErrorResponse)=> throwError(() => `An error occured`)) )
    }
-
-
-
-  // The below code returns the promise of the product array.
-  // Promise is Quite Eager.
-  getProductsUsingPromise(): Promise<IProduct[]> {
-    return httpClient.get('http://localhost:4500/products');
-  }
+    // The below code returns the promise of the product array.
+    // Promise is Quite Eager.
+    getProductsUsingPromise(): Promise<IProduct[]> {
+      return httpClient.get('http://localhost:4500/products');
+    }
 }

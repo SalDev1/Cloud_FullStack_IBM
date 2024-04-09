@@ -1,0 +1,30 @@
+const products = [
+    {
+      "productName": "OnePlus1",
+      "price": 55000.5,
+      "starRating": "4.8",
+      "productId": 2,
+      "pricee": "45678.5",
+      "productCode": "Oneplus",
+      "productAvailable": "30-Sep-2024"
+    },
+    {
+      "productName": "Oppo21",
+      "price": "50000.0",
+      "starRating": "5",
+      "productId": 5,
+      "productAvailable": "12-Jan-2022",
+      "imageUrl": "https://m.media-amazon.com/images/I/31VjlrbE3bL._SY445_SX342_QL70_FMwebp_.jpg",
+      "productCode": "Oppo13"
+    },
+    {
+      "productName": "Nokia",
+      "price": "4567.999",
+      "starRating": "2",
+      "productId": 6,
+      "productAvailable": "30-Nov-2022",
+      "imageUrl": "https://m.media-amazon.com/images/I/31VjlrbE3bL._SY445_SX342_QL70_FMwebp_.jpg",
+      "productCode": "Nok1222"
+    }
+  ]
+  export default products
