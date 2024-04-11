@@ -11,7 +11,7 @@
     },
     {
       "productName": "Oppo21",
-      "price": "50000.0",
+      "price": 50000.0,
       "starRating": "5",
       "productId": 5,
       "productAvailable": "12-Jan-2022",
@@ -20,7 +20,7 @@
     },
     {
       "productName": "Nokia",
-      "price": "4567.999",
+      "price": 4567.999,
       "starRating": "2",
       "productId": 6,
       "productAvailable": "30-Nov-2022",

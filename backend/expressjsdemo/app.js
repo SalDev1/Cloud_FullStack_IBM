@@ -3,7 +3,8 @@ import productRoutes from "./routes/productRoutes.js"
 
 const app = express()   // Function constructor , express constructor.
 
-app.use(express.json())   // BodyParser --> JSON
+// These are the middlewares down below.
+app.use(express.json())   // BodyParser --> JSON , We want to get the data in the json format.
 app.use('/ibm',productRoutes);  //  Connecting the middleware.
 
 
