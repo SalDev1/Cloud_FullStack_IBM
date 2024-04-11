@@ -1,9 +1,17 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Box , Text , Button } from '@chakra-ui/react';
 import { FaShoppingCart } from "react-icons/fa";
+import {useSelector} from 'react-redux';
 
 const NavBar = (props) => {
-    const count = 0;
+    const [getOrders , setGetOrders] = useState([])
+    const orders = useSelector(state => state.orders.orders);
+    
+    const length = getOrders.reduce((sum,i) => sum += i.quantity,0)
+
+    useEffect(() => {
+        setGetOrders(orders);
+    } , [orders])
 
     return (
         <Box w="100%" bg="#7d0b02" h="60px" display="flex" justifyContent="space-around" alignItems="center" position="fixed">
@@ -19,7 +27,7 @@ const NavBar = (props) => {
               onClick={props.onOpen}
               >
               
-              <FaShoppingCart style = {{background : 'none', margin: '5px'}}/> {' '} Your Cart ({count})
+              <FaShoppingCart style = {{background : 'none', margin: '5px'}}/> {' '} Your Cart ({length})
             </Button>
         </Box>
     )

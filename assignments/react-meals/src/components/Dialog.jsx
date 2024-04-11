@@ -9,6 +9,7 @@ import {
     AlertDialogCloseButton,
     Button,
   } from '@chakra-ui/react'
+import Orders from "./Orders";
 
 
 const Dialog = ({isOpen , onOpen , onClose}) => {
@@ -28,7 +29,7 @@ const Dialog = ({isOpen , onOpen , onClose}) => {
                     </AlertDialogHeader>
 
                     <AlertDialogBody>
-                    Are you sure? You can't undo this action afterwards.
+                      <Orders />
                     </AlertDialogBody>
 
                     <AlertDialogFooter>

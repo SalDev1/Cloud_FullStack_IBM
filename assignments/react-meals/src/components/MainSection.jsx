@@ -1,10 +1,15 @@
-import React from "react";
-import {Box , Image , Text, Button ,Input} from "@chakra-ui/react";
+import React, { useState } from "react";
+import {Image ,Box, Text, Button ,Input} from "@chakra-ui/react";
 import FastFoodImage from "../image_1.jpg";
 import foodDishes from "../model/dishes_data";
 import { IoMdAdd } from "react-icons/io";
+import {useDispatch} from "react-redux"
+import { addToCart } from "../redux/orderSlice";
 
 const MainSection = (props) => {
+    const [quantity , setQuantity] = useState(1);
+    const dispatch = useDispatch();
+
     return (
         <>
           <Box w="100%" display="flex" 
@@ -21,11 +26,11 @@ const MainSection = (props) => {
             }}>
 
               <Text fontSize="4xl" pb="1em" fontWeight="700" color="#7d0b02">Delicious Food, Delivered to You</Text>
-              <Text mb={2} color="#8c8c8c">
+              <Text mb={2} color="#8c8c8c" fontSize="small">
                 Choose your favorite meal from our broad selection of
                 available meals and enjoy a delicious lunch or dinner at home.
               </Text>
-              <Text color="#8c8c8c">
+              <Text color="#8c8c8c" fontSize="small">
                 All our meals are cooked with high-quality ingredients, just in-time and 
                 of course by experienced chefs.
               </Text>
@@ -57,7 +62,7 @@ const MainSection = (props) => {
               width:"70%",
               padding : "8px",
               border : "1px solid #7d0b02"
-            }}>
+            }} key={food.dish_name}>
               <Box>
                 <Text fontWeight="700">{food.dish_name}</Text>
                 <Text as = "i">{food.description}</Text>
@@ -71,14 +76,21 @@ const MainSection = (props) => {
                 justifyContent:"center"
               }}>
                 <Box style = {{display:"flex",alignItems:'center', justifyContent:"end", paddingBottom:'10px'}}>
-                  Quantity : <Input type="number" ml={3} width="12%" p={2} placeholder="0"/>
+                  Quantity : <Input type="number" ml={3} width="12%" p={2} placeholder="1" onChange={(e) => setQuantity(e.target.value)}/>
                 </Box>
                 <Button style = {{
                   borderRadius : "20px",
                   padding : "0px 20px",
                   color : "white",
                   backgroundColor : "#570701"
-                }}> <IoMdAdd style = {{background:"none" , color:"white"}}/>Add</Button>
+                }}
+                  onClick={() => dispatch(addToCart({
+                    dish_name : food.dish_name,
+                    description : food.description,
+                    price : food.price,
+                    quantity : parseInt(quantity)
+                  }))}
+                > <IoMdAdd style = {{background:"none" , color:"white"}}/>Add</Button>
               </Box>
             </Box>
           ))}
