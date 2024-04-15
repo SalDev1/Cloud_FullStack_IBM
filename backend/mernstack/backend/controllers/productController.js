@@ -6,6 +6,11 @@ const getProducts = asyncHandler(async(req , res) => {
     res.status(200).json(products)
 })
 
+const getProductById = asyncHandler(async(req,res) => {
+    const id = req.params.id
+    const product = await Product.find({productId: id})
+    res.status(200).json(product[0])
+})
 
 // Adding A Product using the Post Method.
 const addNewProduct = asyncHandler(async(req,res) => {
@@ -47,6 +52,7 @@ const deleteProduct = asyncHandler(async(req,res) => {
 // This is a named module.
 export {
     getProducts,
+    getProductById,
     addNewProduct,
     updateExistingProduct,
     deleteProduct
