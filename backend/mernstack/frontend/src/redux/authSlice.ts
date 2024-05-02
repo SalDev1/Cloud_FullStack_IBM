@@ -48,6 +48,7 @@ export const authSlice = createSlice({
   initialState,
   reducers: {
     logout: (state) => {
+      authService.logout()
       state.user = null
     },
   },

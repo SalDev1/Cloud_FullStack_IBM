@@ -31,8 +31,10 @@ const productSchema = mongoose.Schema({
 // Schema will return you an object + Literal style. 
 // It is object Representation of the Document.
 /*
-   mongoose.mode --> It decorates your productSchema object with the MongoDB operations.
+   mongoose.model --> It decorates your productSchema object with the MongoDB operations.
    Adding + Modifying new behaviours + all the operations get decorated, that was mongoose.mode.
    "Product" is a alias to the productSchema.
+   
+   It is similar to Aspect Oriented Programming.
 */
 export default mongoose.model("Product",productSchema)

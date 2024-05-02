@@ -1,12 +1,28 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
 import ProductsList from './components/ProductList';
 // import { ProductProvider } from './context/productContext';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import {FC} from 'react';
 import ProductSearch from './components/ProductSearch';
+import { logout } from './redux/authSlice';
+import { useSelector, useDispatch } from 'react-redux'
+import { AppDispatch } from './redux/store';
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const App :FC<any> = ({children}) => {
+  const user = localStorage.getItem('user');
+  const dispatch = useDispatch<AppDispatch>();
+
+  const navigate = useNavigate();
+
+  const logoutHandler = () => {
+     dispatch(logout());
+     navigate('/');
+  }
+
   return (
     // There should exist at least one root element , otherwise you aren't able to 
     // render the given component.  
@@ -42,6 +58,14 @@ const App :FC<any> = ({children}) => {
               <li className="nav-item">
                 <Link className="nav-link active" aria-current="page" to="/products">ProductsList</Link>
               </li>
+
+              {user && (
+                <>
+                  <li className="nav-item">
+                    <a className="nav-link active" aria-current="page" onClick={() => logoutHandler()}>Logout</a>
+                  </li>
+                </>
+              )}
             </ul>
 
             <ProductSearch />

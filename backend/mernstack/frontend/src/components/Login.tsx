@@ -26,9 +26,7 @@ function Login() {
       [e.target.name]: e.target.value,
     }))
   }
-
   
-
   const onSubmit = (e:any) => {
     e.preventDefault()
 
